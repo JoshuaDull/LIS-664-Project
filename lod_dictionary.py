@@ -1,6 +1,7 @@
 import json
 import requests 
 import csv
+import pprint
 
 artist_dict = {}
 
@@ -60,19 +61,20 @@ with open ("birth_info.csv", "r") as in_file:
 			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['COUNTRY'] = country
 
 #print(artist_dict)			
-for artist_name in artist_dict:
-	try:	
-		artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['YEAR'] = date
-		begin_date = int(date + '0101')
-		end_date = (date + '1231')
-		payload = { 'q' : artist_name, 'fq' : "type_of_material.contains:(Obituary)", 'begin_date' : begin_date, 'end_date' : end_date, 'api-key' : "86e35586ca628b7b5577029c151f825c:17:72915474" }
-		r = requests.get("http://api.nytimes.com/svc/search/v2/articlesearch.json", params = payload)
-		data = json.loads(r.text)
-		artist_dict[artist_name]['BIOGRAPHIC']['NYT_OBITUARY'] = [data['response']['docs'][0]['web_url']]
-	except:
-		continue
-print(artist_dict)			
-#with open('project_data.json', 'w') as out_file:
-#	json.dump(artist_dict, out_file)
+#for artist_name in artist_dict:
+#	artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['YEAR'] = date
+#	print(date)
+	#begin_date = int(date + '0101')
+		#end_date = (date + '1231')
+		#payload = { 'q' : artist_name, 'fq' : "type_of_material.contains:(Obituary)", 'begin_date' : begin_date, 'end_date' : end_date, 'api-key' : "86e35586ca628b7b5577029c151f825c:17:72915474" }
+		#r = requests.get("http://api.nytimes.com/svc/search/v2/articlesearch.json", params = payload)
+		#data = json.loads(r.text)
+		#artist_dict[artist_name]['BIOGRAPHIC']['NYT_OBITUARY'] = [data['response']['docs'][0]['web_url']]
+#	except:
+#		print (artist_dict[artist_name])
+#		continue
+			
+with open('project_data.json', 'w') as out_file:
+	json.dump(artist_dict, out_file)
 			
 		
