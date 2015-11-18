@@ -1,22 +1,33 @@
+import json
 import requests
 import csv
 
 geonames = {}
 
-with open("birth_info.csv", "r") as in_file:
+with open("birth_info.csv", "r") as in_file, open("birth2.csv", "w") as out_file:
     x = csv.reader(in_file)
+    w = csv.writer(out_file)
     row0 = next(x)
     row0.append('longitude')
     row0.append('latitude')
+    row0.append('geonameId')
     print(row0)
-    # for row in x:
-    #   city = row[6]
-    #   state = row[7]
-    #   country = row[8]
-    #   payload = { 'q' : city +"+"+ state +"+"+ country, 'maxRows' : 1, 'username' : "joshuadull"}
-    #   r = requests.get("http://api.geonames.org/searchJSON", params = payload)
-    #   print(r)
-  # http://api.geonames.org/searchJSON?q=warsaw%20poland&maxRows=1&username=joshuadull
+    for row in x:
+       city = row[6]
+       #state = row[7]
+       country = row[8]
+       location = city +" "+ country
+       print(location)
+       payload = { 'q' : location, 'maxRows' : 1, 'username' : "joshuadull"}
+       r = requests.get("http://api.geonames.org/searchJSON", params = payload)
+       print(r.url)	
+       data = json.loads(r.text)
+       row.append(data['geonames'][0]['lng'])
+       row.append(data['geonames'][0]['lat'])
+       row.append(data['geonames'][0]['geonameId'])
+       w.writerow(row)
+       print(row)
+# http://api.geonames.org/searchJSON?q=warsaw%20poland&maxRows=1&username=joshuadull
 
 
 # for artist_name in x:
