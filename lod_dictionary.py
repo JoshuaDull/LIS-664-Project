@@ -1,7 +1,5 @@
-import json
-import requests 
+import json 
 import csv
-import pprint
 
 artist_dict = {}
 
@@ -38,12 +36,18 @@ with open ("death_info.csv", "r") as in_file:
 		city = row[6]
 		state = row[7]
 		country = row[8]
+		latitude = row[]
+		longitude = row[]
+		geonameID = row[]
 		if artist_name in artist_dict:
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH'] = {}
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['YEAR'] = death_year
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['CITY'] = city
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['STATE'] = state
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['COUNTRY'] = country
+			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['LATITUDE'] = latitude
+			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['LONGITUDE'] = longitude
+			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['geonameID'] = geonameID
 
 with open ("birth_info.csv", "r") as in_file:
 	data = csv.reader(in_file)
@@ -53,26 +57,20 @@ with open ("birth_info.csv", "r") as in_file:
 		city = row[6]
 		state = row[7]
 		country = row[8]
+		latitude = row[]
+		longitude = row[]
+		geonameID = row[]
 		if artist_name in artist_dict:
 			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH'] = {}	
 			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['YEAR'] = birth_year
 			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['CITY'] = city
 			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['STATE'] = state
 			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['COUNTRY'] = country
+			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['LATITUDE'] = latitude
+			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['LONGITUDE'] = longitude
+			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['geonameID'] = geonameID
 
-#print(artist_dict)			
-#for artist_name in artist_dict:
-#	artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['YEAR'] = date
-#	print(date)
-	#begin_date = int(date + '0101')
-		#end_date = (date + '1231')
-		#payload = { 'q' : artist_name, 'fq' : "type_of_material.contains:(Obituary)", 'begin_date' : begin_date, 'end_date' : end_date, 'api-key' : "86e35586ca628b7b5577029c151f825c:17:72915474" }
-		#r = requests.get("http://api.nytimes.com/svc/search/v2/articlesearch.json", params = payload)
-		#data = json.loads(r.text)
-		#artist_dict[artist_name]['BIOGRAPHIC']['NYT_OBITUARY'] = [data['response']['docs'][0]['web_url']]
-#	except:
-#		print (artist_dict[artist_name])
-#		continue
+
 			
 with open('project_data.json', 'w') as out_file:
 	json.dump(artist_dict, out_file)
