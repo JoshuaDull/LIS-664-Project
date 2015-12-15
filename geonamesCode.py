@@ -27,7 +27,7 @@ with open("birthGeo.csv", "r") as in_file, open("birthGeonames.csv", "w") as out
       r = requests.get("http://api.geonames.org/searchJSON", params = payload)
 #      print(r.url)
       data = json.loads(r.text)
-      whitneyURL = '<a href="http://collection.whitney.org/artist/' + artistID + '">Whitney.org</a>'
+      whitneyURL = '<a target="_blank" href="http://collection.whitney.org/artist/' + artistID + '">Whitney.org</a>'
 #      print(whitneyURL)
       try:
         row.append(data['geonames'][0]['lng'])
@@ -63,7 +63,7 @@ with open("deathGeo.csv", "r") as in_file, open("deathGeonames.csv", "w") as out
       payload = { 'q' : location, 'maxRows' : 1, 'username' : "joshuadull"}
       r = requests.get("http://api.geonames.org/searchJSON", params = payload)
  #     print(r.url)
-      whitneyURL = '<a href="http://collection.whitney.org/artist/' + artistID + '">Whitney.org</a>'
+      whitneyURL = '<a target="_blank" href="http://collection.whitney.org/artist/' + artistID + '">Whitney.org</a>'
       data = json.loads(r.text)
       try:
         row.append(data['geonames'][0]['lng'])
