@@ -1,4 +1,4 @@
-Last Name,First Name,Display Name,Begin Date,End Date,Display Date,City,State,Country,Subcontinent,Continen,ConstituentID,ULAN,,longitude,latitude,geonameId,WhitneyURL
+Last Name,First Name,Display Name,Begin Date,End Date,Display Date,City,State,Country,Subcontinent,Continen,ConstituentID,ULAN,nyt,longitude,latitude,geonameId,WhitneyURL
 Adams,Kenneth M.,Kenneth M. Adams,1897,1966,1897-1966,Albuquerque,New Mexico,United States of America,,North America,3,,,-106.65114,35.08449,5454711,"<a target=""_blank"" href=""http://collection.whitney.org/artist/3"">Whitney.org</a>"
 Archer,Edmund,Edmund Archer,1904,1986,1904-1986,Richmond,Virginia,United States of America,Central North America,North America,26,,,-77.46026,37.55376,4781708,"<a target=""_blank"" href=""http://collection.whitney.org/artist/26"">Whitney.org</a>"
 Atherton,John,John Atherton,1900,1952,1900-1952,,New Brunswick,Canada,,North America,35,,,-65.99878,46.5001,6087430,"<a target=""_blank"" href=""http://collection.whitney.org/artist/35"">Whitney.org</a>"
@@ -47,7 +47,7 @@ Burroughs,Bryson,Bryson Burroughs,1869,1934,1869-1934,New York City,New York,Uni
 Butler,Andrew,Andrew Butler,1896,1979,1896-1979,New York City,New York,United States of America,,North America,206,,,-74.00597,40.71427,5128581,"<a target=""_blank"" href=""http://collection.whitney.org/artist/206"">Whitney.org</a>"
 Cadmus,Paul,Paul Cadmus,1904,1999,1904-1999,Weston,Connecticut,United States of America,Central North America,North America,210,,,-73.38067,41.20093,4845578,"<a target=""_blank"" href=""http://collection.whitney.org/artist/210"">Whitney.org</a>"
 Cammarata,Peter,Peter Cammarata,1887,0,1887-,,,,,,219,,,35.76667,34.15778,270871,"<a target=""_blank"" href=""http://collection.whitney.org/artist/219"">Whitney.org</a>"
-Campbell,Blendon,Blendon Campbell,1872,1969,1872-1969,Brandednton,Florida,United States of America,,North America,222,,,"<a target=""_blank"" href=""http://collection.whitney.org/artist/222"">Whitney.org</a>"
+Campbell,Blendon,Blendon Campbell,1872,1969,1872-1969,Bradenton,Florida,United States of America,,North America,222,,,-82.45148,27.59587,4148708,"<a target=""_blank"" href=""http://collection.whitney.org/artist/222"">Whitney.org</a>"
 Campbell,Charles,Charles Campbell,1905,1985,1905-1985,Phoenix,Arizona,United States of America,,North America,223,,,-112.07404,33.44838,5308655,"<a target=""_blank"" href=""http://collection.whitney.org/artist/223"">Whitney.org</a>"
 Canade,Vincent,Vincent Canade,1879,1961,1879-1961,New York City,New York,United States of America,,North America,225,,,-74.00597,40.71427,5128581,"<a target=""_blank"" href=""http://collection.whitney.org/artist/225"">Whitney.org</a>"
 Carroll,John,John Carroll,1892,1959,1892-1959,Albany,New York,United States of America,,North America,236,,,-73.75623,42.65258,5106834,"<a target=""_blank"" href=""http://collection.whitney.org/artist/236"">Whitney.org</a>"

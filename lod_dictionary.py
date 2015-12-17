@@ -28,17 +28,41 @@ with open ("1931_1948_2.csv", "r") as in_file:
 			artist_dict[artist_name]['OBJECTS'][object_no]['DIMENSIONS'] = dimensions
 			artist_dict[artist_name]['OBJECTS'][object_no]['CREDIT_LINE'] = credit
 
-with open ("death_info.csv", "r") as in_file:
+
+with open ("birthInformation.csv", "r") as in_file:
 	data = csv.reader(in_file)
 	for row in data:
+		print(row)
+		artist_name = row[2]
+		birth_year = row[3]
+		city = row[6]
+		state = row[7]
+		country = row[8]
+		latitude = row[13]
+		longitude = row[12]
+		geonameID = row[14]
+		if artist_name in artist_dict:
+			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH'] = {}	
+			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['YEAR'] = birth_year
+			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['CITY'] = city
+			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['STATE'] = state
+			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['COUNTRY'] = country
+			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['LATITUDE'] = latitude
+			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['LONGITUDE'] = longitude
+			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['geonameID'] = geonameID
+
+with open ("deathInformation.csv", "r") as in_file:
+	data = csv.reader(in_file)
+	for row in data:
+		print(row)
 		artist_name = row[2]
 		death_year = row[4]
 		city = row[6]
 		state = row[7]
 		country = row[8]
-		latitude = row[]
-		longitude = row[]
-		geonameID = row[]
+		latitude = row[15]
+		longitude = row[14]
+		geonameID = row[16]
 		if artist_name in artist_dict:
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH'] = {}
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['YEAR'] = death_year
@@ -49,26 +73,6 @@ with open ("death_info.csv", "r") as in_file:
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['LONGITUDE'] = longitude
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['geonameID'] = geonameID
 
-with open ("birth_info.csv", "r") as in_file:
-	data = csv.reader(in_file)
-	for row in data:
-		artist_name = row[2]
-		birth_year = row[3]
-		city = row[6]
-		state = row[7]
-		country = row[8]
-		latitude = row[]
-		longitude = row[]
-		geonameID = row[]
-		if artist_name in artist_dict:
-			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH'] = {}	
-			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['YEAR'] = birth_year
-			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['CITY'] = city
-			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['STATE'] = state
-			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['COUNTRY'] = country
-			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['LATITUDE'] = latitude
-			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['LONGITUDE'] = longitude
-			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['geonameID'] = geonameID
 
 
 			
