@@ -18,7 +18,7 @@ Using a python script, information about each artist (artist’s name and year o
 
         NYT_Obits.py
 
-The second method mapped geographic data about each artist using the javascript library leaflet.js, linking people and places. The general geographic information included place names of where each artist was born and died. Using an API search of the GeoNames database, the specific Latitude, Longitude, and GeoNames ID for each location in question was added to our dataset. this resulted in two csv files with complete biographical and geographic information for each artist, one for birth info and one for death info:
+The second method mapped geographic data about each artist using the javascript library leaflet.js, linking people and places. The general geographic information included place names of where each artist was born and died. Using an API search of the GeoNames database, the specific Latitude, Longitude, and GeoNames ID for each location in question was added to our dataset. This resulted in two csv files with complete biographical and geographic information for each artist, one for birth info and one for death info:
 
         geonamesCode.py         birthInformation.csv            deathInformation.csv
 The final results are an interactive map of artists’ birth and death records and a JSON dictionary combining biographical data with object data. 
