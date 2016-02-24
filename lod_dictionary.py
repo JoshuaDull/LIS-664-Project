@@ -38,8 +38,8 @@ with open ("birthInformation.csv", "r") as in_file:
 		city = row[6]
 		state = row[7]
 		country = row[8]
-		latitude = row[13]
-		longitude = row[12]
+		latitude = row[12]
+		longitude = row[13]
 		geonameID = row[14]
 		if artist_name in artist_dict:
 			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH'] = {}	
@@ -51,7 +51,7 @@ with open ("birthInformation.csv", "r") as in_file:
 			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['LONGITUDE'] = longitude
 			artist_dict[artist_name]['BIOGRAPHIC']['BIRTH']['geonameID'] = geonameID
 
-with open ("deathInformation.csv", "r") as in_file:
+with open ("obits.csv", "r") as in_file:
 	data = csv.reader(in_file)
 	for row in data:
 		print(row)
@@ -60,9 +60,11 @@ with open ("deathInformation.csv", "r") as in_file:
 		city = row[6]
 		state = row[7]
 		country = row[8]
-		latitude = row[15]
+		latitude = row[13]
 		longitude = row[14]
-		geonameID = row[16]
+		geonameID = row[15]
+		whitney_url = row[16]
+		#obit = row[17]
 		if artist_name in artist_dict:
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH'] = {}
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['YEAR'] = death_year
@@ -72,10 +74,13 @@ with open ("deathInformation.csv", "r") as in_file:
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['LATITUDE'] = latitude
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['LONGITUDE'] = longitude
 			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['geonameID'] = geonameID
+			artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['whitneyLink'] = whitney_url
+			try:
+                                obit = row[17]
+                                artist_dict[artist_name]['BIOGRAPHIC']['DEATH']['NewYorkTimesObituary'] = obit
+			except:
+				continue
 
-
-
-			
 with open('project_data.json', 'w') as out_file:
 	json.dump(artist_dict, out_file)
 			

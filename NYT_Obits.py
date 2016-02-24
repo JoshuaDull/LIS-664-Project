@@ -8,6 +8,7 @@ with open("deathInformation.csv", "r") as in_file, open("obits.csv", "w") as out
 	row0 = next(x)
 	row0.append('NYT_URL')
 	w.writerow(row0)
+	print(row0)
 	for row in x:
 		artist_name = row[2]
 		date1 = int(row[4] + '0101')
@@ -16,8 +17,11 @@ with open("deathInformation.csv", "r") as in_file, open("obits.csv", "w") as out
 		r = requests.get("http://api.nytimes.com/svc/search/v2/articlesearch.json", params = payload)
 		data = json.loads(r.text)
 		try:
-			row.append(data['response']['docs'][0]['web_url'])
-			w.writerow(row)
+                        obit_link = data['response']['docs'][0]['web_url']
+                        url = '<a target="_blank" href="' + obit_link + '">New York Times Obituary</a>'
+                        row.append(url)
+                        print(row)
+                        w.writerow(row)
 		except:
 			w.writerow(row)
 			continue
